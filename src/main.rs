@@ -72,7 +72,7 @@ fn main() {
     let args = Args::parse();
 
     // TODO read CSV file
-    let csv_data = CSVFile::from_file(args.read_path).unwrap();
+    let mut csv_data = CSVFile::from_file(args.read_path).unwrap();
 
     // TODO parse
     match args.command {
