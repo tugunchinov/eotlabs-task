@@ -49,29 +49,34 @@ enum Error {
 
 #[allow(dead_code)]
 #[derive(Debug, Default)]
-struct CSVData {
+struct CSVFile {
     data: Vec<Vec<String>>,
     rows: usize,
     cols: usize,
 }
 
-impl CSVData {
+impl CSVFile {
     // TODO read data into CSV struct
     pub fn from_file(file_path: PathBuf) -> Result<Self> {
         Ok(Self::default())
     }
 
-    // TODO save CSV struct data to a file
+    // TODO Either update the existing csv file or create a new one - your choice
     fn to_file(&self, file_path: PathBuf) -> Result<()> {
         Ok(())
     }
 }
+
 fn main() {
     // TODO Read and parse CLI args
     let args = Args::parse();
-    println!("{:?}", args);
-    // TODO read CSV file
-    let csv_data = CSVData::from_file(args.read_path).unwrap();
 
-    // TODO parse 
+    // TODO read CSV file
+    let csv_data = CSVFile::from_file(args.read_path).unwrap();
+
+    // TODO parse
+    match args.command {
+        Command::Display => println!("Prints the CSV data"),
+        Command::Modify { row, col, data } => println!("Modifies the CSV file"),
+    }
 }
