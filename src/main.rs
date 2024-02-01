@@ -34,7 +34,7 @@ enum Command {
         #[clap(short, long)]
         col: usize,
 
-        // comma seperated values from cli
+        // NOTE: Vec<String> is for convenience only, please expect a Vec of len 1 only.
         #[clap(short, long, value_delimiter = ',')]
         data: Vec<String>,
     },
@@ -77,6 +77,7 @@ fn main() {
     // TODO parse
     match args.command {
         Command::Display => println!("Prints the CSV data"),
+        // NOTE: Vec<String> is for convenience only, please expect a Vec of len 1 only.
         Command::Modify { row, col, data } => println!("Modifies the CSV file"),
     }
 }
