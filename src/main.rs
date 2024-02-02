@@ -1,6 +1,6 @@
 //! # Requirements
-//! Display: Prints out the csv struct
-//! Replace: Replaces an item in the csv struct by another at any given coordinates
+//! display(): Prints out the csv struct
+//! replace(): Replaces an item in the csv struct by another at any given coordinates
 //!
 //! # Some other Requirements
 //! Please utilize the following in your solution
