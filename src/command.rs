@@ -21,7 +21,7 @@ pub enum Command {
     // Display entire file
     Display,
     // Modify a row/field
-    Modify {
+    Replace {
         #[clap(short, long)]
         row: usize,
 
