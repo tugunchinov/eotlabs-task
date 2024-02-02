@@ -3,9 +3,9 @@
 //! replace(): Replaces an item in the csv struct by another at any given coordinates
 //!
 //! # Some other Requirements
-//! Please utilize the following in your solution
-//! Associate Types, Traits, Trait Constraints, Associate Types, Error<>, Option<>
+//! Please utilize the following in your solution:- Associate Types, Traits, Trait Constraints, Associate Types, Error<>, Option<>
 //! Custom error variants and handle them where possible.
+//! Please pay attention to code readability and structure - separate into multiple files if possible.
 //!
 //! ## NOTE
 //! Use only std and the crates provided
@@ -25,10 +25,40 @@ use std::{
     path::PathBuf,
 };
 
-pub mod command;
-use command::*;
+// CLI args parser
+#[derive(Parser, Debug)]
+pub struct Args {
+    // Csv file read path
+    #[arg(short, long)]
+    pub read_path: PathBuf,
+    // Output data to new csv file or update existing one
+    #[arg(short, long)]
+    pub write_path: Option<PathBuf>,
+    // Sub command for handling data in csv file
+    #[clap(subcommand)]
+    pub command: Command,
+}
 
-// Some custom errors you will implement
+// Command and args prser
+#[derive(Parser, Debug)]
+pub enum Command {
+    // Display entire file
+    Display,
+    // Modify a row/field
+    Replace {
+        #[clap(short, long)]
+        row: usize,
+
+        #[clap(short, long)]
+        col: usize,
+
+        // the new item to put into csv file
+        #[clap(short, long, value_delimiter = ',')]
+        data: String,
+    },
+}
+
+// TODO Some custom errors you will implement
 #[derive(Debug)]
 enum CSVError {
     SomeError = 0,
