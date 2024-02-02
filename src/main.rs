@@ -53,7 +53,7 @@ pub enum Command {
         col: usize,
 
         // the new item to put into csv file
-        #[clap(short, long, value_delimiter = ',')]
+        #[clap(short, long)]
         data: String,
     },
 }
