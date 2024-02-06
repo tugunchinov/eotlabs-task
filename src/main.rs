@@ -16,7 +16,7 @@
 //! cargo run -- --read-path=./data.csv display
 //!
 //! ## Replace
-//! cargo run -- --read-path=./data.csv --write-path=./write.csv replace -r 1 -c 1 -d yolo
+//! cargo run -- --read-path=./data.csv replace -r 1 -c 1 -d yolo
 
 use clap::Parser;
 use std::{
@@ -31,9 +31,6 @@ pub struct Args {
     // Csv file read path
     #[arg(short, long)]
     pub read_path: PathBuf,
-    // Output data to new csv file or update existing one
-    #[arg(short, long)]
-    pub write_path: Option<PathBuf>,
     // Sub command for handling data in csv file
     #[clap(subcommand)]
     pub command: Command,
