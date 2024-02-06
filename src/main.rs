@@ -1,12 +1,15 @@
 //! # Requirements
-//! display(): Prints out the csv struct
-//! replace(): Replaces an item in the csv struct by another at any given coordinates
+//! display: Prints out the csv struct
+//! replace: Replaces an item in the csv struct by another at any given coordinates
 //!
 //! # Some other Requirements
-//! Please utilize the following in your solution:- Associate Types, Traits, Trait Constraints, Associate Types, Error<>, Option<>
+//! Please utilize the following in your solution:- Associate Type, Trait, Trait Constraint or where clause, and Result<>
 //! Custom error variants and handle them where possible.
 //! Please pay attention to code readability and structure - separate into multiple files if possible.
 //!
+//! ## NOTE We are looking for a creative implementation, template provided is just a reference point
+//! you can modify it as you wish, except for the CLI commands part.
+//! 
 //! ## NOTE
 //! Use only std and the crates provided
 //!
