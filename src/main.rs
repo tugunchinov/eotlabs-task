@@ -55,15 +55,7 @@ impl CSVFileReader for CSVFile {
         let file = File::open(file_path)?;
         let buff = BufReader::new(file);
 
-        for (index, line) in buff.lines().enumerate() {
-            let line = line?;
-            let row: Vec<String> = line.split(',').map(|s| s.trim().to_string()).collect();
-            if index == 0 {
-                self.cols = row.len();
-            }
-            self.data.push(row);
-            self.rows += 1
-        }
+        for (index, line) in buff.lines().enumerate() {}
 
         Ok(())
     }
