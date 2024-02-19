@@ -5,6 +5,7 @@ use std::{
     path::PathBuf,
 };
 
+/* Do not modify this */
 // CLI args parser
 #[derive(Parser, Debug)]
 pub struct Args {
@@ -16,6 +17,7 @@ pub struct Args {
     pub command: Command,
 }
 
+/* Do not modify this */
 // Command and args prser
 #[derive(Parser, Debug)]
 pub enum Command {
@@ -35,11 +37,6 @@ pub enum Command {
     },
 }
 
-// TODO Some custom errors you will implement
-#[derive(Debug)]
-enum CSVError {
-    SomeError = 0,
-}
 
 #[allow(dead_code)]
 #[derive(Debug, Default)]
